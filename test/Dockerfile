@@ -4,16 +4,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Add custom index.html
-RUN echo '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Virk Deployment</title>
-</head>
-<body>
-    <h1>This was deployed by Virk Github Automation</h1>
-</body>
-</html>' > /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html
 
 # Expose port 80
 EXPOSE 80
